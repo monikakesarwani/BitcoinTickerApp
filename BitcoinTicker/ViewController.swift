@@ -35,7 +35,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
     
     let currencySymbolsArray = ["$", "R$", "$", "¥", "€", "£", "$", "Rp", "₪", "₹", "¥", "$", "kr", "$", "zł", "lei", "₽", "kr", "$", "$", "R"]
-    
+    //to tract current currency index with symbol
     var currentSymbol = ""
     
     //to make finalURL add baseURL + currencyArray[row]
@@ -131,7 +131,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func updateData(json : JSON) {
         
         if let currencyResult = json["ask"].double {
-            bitcoinPriceLabel.text = "\(currentSymbol) \(currencyResult)"
+            bitcoinPriceLabel.text = "\(currentSymbol)\(currencyResult)"
 
         } else{
             bitcoinPriceLabel.text = "Currency Unavailable"
